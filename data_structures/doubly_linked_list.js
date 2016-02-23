@@ -35,7 +35,7 @@ LinkedList.prototype.addToTail = function(val) {
     this.tail = node;
     this._size++;
   } else {
-    return "cannot add item to tail, list is full";
+    return "Cannot add item to tail, list is full";
   }
 }
 

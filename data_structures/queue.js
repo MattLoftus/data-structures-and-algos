@@ -2,12 +2,12 @@
 var Queue = function(limit) {
   this._storage = [];
   this._size = 0;
-  this.limit = limit || 0;
+  this._limit = limit || 0;
 }
 
 Queue.prototype.enqueue = function(val) {
   //add item to beginning of queue and increment size
-  if (this._size < this.limit) {
+  if (this._size < this._limit) {
     this._size++;
     this._storage.unshift(val);
   } else {

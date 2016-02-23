@@ -2,12 +2,12 @@
 var Stack = function(limit) {
   this._storage = [];
   this._size = 0;
-  this.limit = limit || 1000;
+  this._limit = limit || 1000;
 }
 
 Stack.prototype.push = function(val) {
   //Increment size and add value to top of the stack
-  if (this._size < this.limit) {
+  if (this._size < this._limit) {
     this._size++;
     this._storage.push(val);
   } else {
