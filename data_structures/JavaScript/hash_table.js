@@ -26,7 +26,7 @@ HashTable.prototype.resize = function(limit) {
 }
 
 HashTable.prototype.insert = function(key, val) {
-  var hash = this.getHash(key);
+  var hash = this.getHash(key, this._limit);
 
   var bucket = this._storage[hash] || [];
   //If bucket is nonempty, check for collisions
@@ -58,7 +58,7 @@ HashTable.prototype.insert = function(key, val) {
 }
 
 HashTable.prototype.retrieve = function(key) {
-  var hash = this.getHash(key);
+  var hash = this.getHash(key, this._limit);
 
   var bucket = this._storage[hash];
 
@@ -78,7 +78,7 @@ HashTable.prototype.retrieve = function(key) {
 }
 
 HashTable.prototype.remove = function(key) {
-  var hash = this.getHash(key);
+  var hash = this.getHash(key, this._limit);
 
   var bucket = this._storage[hash];
 
@@ -100,7 +100,7 @@ HashTable.prototype.remove = function(key) {
 }
 
 HashTable.prototype.contains = function(key) {
-  var hash = this.getHash(key);
+  var hash = this.getHash(key, this._limit);
 
   var bucket = this._storage[hash];
 
