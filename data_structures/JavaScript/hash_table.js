@@ -16,11 +16,11 @@ HashTable.prototype.resize = function(limit) {
   this._limit = limit;
 
   //Insert new values
-  for (var i = 0; i < stoageCopy.length; i++) {
+  for (var i = 0; i < storageCopy.length; i++) {
     var bucket = storageCopy[i];
     for (var j = 0; j < bucket.length; j++) {
       var tuple = bucket[j];
-      this._storage.insert(tuple[0], tuple[1]);
+      this.insert(tuple[0], tuple[1]);
     }
   }
 }
