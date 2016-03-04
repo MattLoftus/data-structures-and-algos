@@ -10,7 +10,7 @@ Tree.prototype.addChild = function(val) {
   this.children.push(new Tree(val));
 }
 
-//Recursively check if tree or its children contain the target
+//Depth first search to see if a tree contains a value
 Tree.prototype.contains = function(val) {
   if (this.val === val) {
     return true;
